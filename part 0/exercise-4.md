@@ -1,4 +1,4 @@
-# Exercise 4 Sequence Diagram
+# Exercise 4 Form Submit Sequence Diagram
 
 ```mermaid
 sequenceDiagram
