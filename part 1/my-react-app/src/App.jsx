@@ -25,8 +25,12 @@ const Content = ({ parts }) => {
   );
 };
 
-const Total = ({ exercises }) => {
-  return <p>Number of exercises {exercises}</p>;
+const Total = ({ parts }) => {
+  return (
+    <p>
+      Number of exercises {parts.reduce((sum, part) => sum + part.exercises, 0)}
+    </p>
+  );
 };
 
 const App = () => {
@@ -44,12 +48,13 @@ const App = () => {
     name: "State of a component",
     exercises: 14,
   };
+  const parts = [part1, part2, part3];
 
   return (
     <div>
       <Header course_name={course} />
-      <Content parts={[part1, part2, part3]} />
-      <Total exercises={part1.exercises + part2.exercises + part3.exercises} />
+      <Content parts={parts} />
+      <Total parts={parts} />
     </div>
   );
 };
